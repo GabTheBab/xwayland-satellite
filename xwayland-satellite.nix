@@ -14,7 +14,7 @@
 
 rustPlatform.buildRustPackage rec {  
   pname = "xwayland-satellite";
-  version = "016cef6f72b0bf960218b8b487915c2a8b991ba4";
+  version = "02bee5aea7d4e95abad5c6792f6caab1190a1e68";
 
   src = fetchFromGitHub {
     owner = "Supreeeme";
@@ -23,7 +23,7 @@ rustPlatform.buildRustPackage rec {
     sha256 = "sha256-/ozAYc+hkCugIBw5w9u/A+4rVgOhpO2V2u1eaMXsa9U=";
   };
 
-  cargoSha256 = "sha256-NfIanS7IMXC+Cc2pk8zeWHz418hmamUnQVXvlwY6ijY=";
+  cargoSha256 = "sha256-o4BkKIRRTz6SQqb2QNW6dZh0Gg/WbTesa1bdP0D6XDs=";
 
   doCheck = false;
 

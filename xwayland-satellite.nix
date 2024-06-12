@@ -10,20 +10,21 @@
 , musl
 , xwayland
 , makeWrapper
+, pkg-config
 }:
 
 rustPlatform.buildRustPackage rec {  
   pname = "xwayland-satellite";
-  version = "5e7f2df05e0e0307e7b0fcebd24194a09f8d2567";
+  version = "b6d281967cb0b7bf1dfdb8d0f597b517dc4aa5c5";
 
   src = fetchFromGitHub {
     owner = "Supreeeme";
     repo = "xwayland-satellite";
     rev = version;
-    sha256 = "sha256-L5jOU34bPf/BqsuDZK1JzVgBWwgzFm0auPYkZ6RjB0k=";
+    sha256 = "sha256-dwF9nI54a6Fo9XU5s4qmvMXSgCid3YQVGxch00qEMvI=";
   };
 
-  cargoSha256 = "sha256-631l9iV83sgnY+kkaXnTYOLeBShs4r73wEmPb73TCfM=";
+  cargoSha256 = "sha256-YuDCMPAuzHfGgFoobA7VAnq8SqzLfDqqq0q+avIskNg=";
 
   doCheck = false;
 
@@ -42,6 +43,10 @@ rustPlatform.buildRustPackage rec {
     clang
     makeWrapper
   ];
+
+    nativeBuildInputs = [
+        pkg-config
+    ];
 
   postInstall = ''
     wrapProgram $out/bin/xwayland-satellite \
